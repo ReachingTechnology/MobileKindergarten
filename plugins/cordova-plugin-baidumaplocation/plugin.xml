@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-baidumaplocation"
+        version="3.2.0">
+    <name>BadiduMap Location</name>
+    <description>Cordova Geolocation Plugin,use Baidu Map SDK</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,baidu,location,geolocation</keywords>
+    <repo>https://github.com/aruis/cordova-plugin-baidumaplocation</repo>
+    <issue>https://github.com/aruis/cordova-plugin-baidumaplocation/issues</issue>
+    
+    <engines>
+        <engine name="cordova-android" version=">=5.0.0" />
+    </engines>
+
+    <js-module src="www/baidumap_location.js" name="baidumap_location">
+        <clobbers target="baidumap_location"/>
+    </js-module>
+
+    <preference name="ANDROID_KEY" default=""/>
+    <preference name="IOS_KEY" default=""/>
+    <preference name="IOS_LOCATION_DESC" default="请点击'好'以允许访问。"/>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BaiduMapLocation">
+                <param name="android-package" value="com.aruistar.cordova.baidumap.BaiduMapLocation"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <!-- 这个权限用于进行网络定位-->
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+            <!-- 这个权限用于访问GPS定位-->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+            <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+            <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+            <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+            <!-- 用于读取手机当前的状态-->
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+            <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+            <!-- 访问网络，网络定位需要上网-->
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- SD卡读取权限，用户写入离线定位数据-->
+            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!-- 在application标签中声明service组件,每个app拥有自己单独的定位service -->
+            <service
+                    android:name="com.baidu.location.f"
+                    android:enabled="true"
+                    android:process=":remote">
+                <intent-filter>
+                    <action android:name="com.baidu.location.service_v2.2">
+                    </action>
+                </intent-filter>
+            </service>
+            <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$ANDROID_KEY"/>
+        </config-file>
+
+        <source-file src="src/android/BaiduMapLocation.java" target-dir="src/com/aruistar/cordova/baidumap"/>
+        <source-file src="libs/android/armeabi/liblocSDK7a.so" target-dir="libs/armeabi"/>
+        <source-file src="libs/android/armeabi-v7a/liblocSDK7a.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="libs/android/arm64-v8a/liblocSDK7a.so" target-dir="libs/arm64-v8a"/>
+        <source-file src="libs/android/x86/liblocSDK7a.so" target-dir="libs/x86"/>
+        <source-file src="libs/android/x86_64/liblocSDK7a.so" target-dir="libs/x86_64"/>
+        <source-file src="libs/android/BaiduLBS_Android.jar" target-dir="libs"/>
+    </platform>
+
+    <!--ios-->
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="BaiduMapLocation">
+                <param name="ios-package" value="BaiduMapLocation"/>
+            </feature>
+        </config-file>
+
+        <!--为了能够在iOS9中正常使用非HTTPS协议-->
+        <config-file parent="NSAppTransportSecurity" target="*-Info.plist">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true/>
+            </dict>
+        </config-file>
+
+        <!--定位模式 TODO 设置为前后台永远定位-->
+        <!--NSLocationAlwaysUsageDescription / NSLocationWhenInUseUsageDescription-->
+        <config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist">
+            <string>$IOS_LOCATION_DESC</string>
+        </config-file>
+
+        <!--API_KEY-->
+        <config-file parent="BaiduMapLocation" target="*-Info.plist">
+            <dict>
+                <key>IOS_KEY</key>
+                <string>$IOS_KEY</string>
+            </dict>
+        </config-file>
+
+        <!--源文件-->
+        <header-file src="src/ios/BaiduMapLocation.h"/>
+        <source-file src="src/ios/BaiduMapLocation.mm"/>
+
+        <!--库文件-->
+        <framework src="libs/ios/BaiduMapAPI_Base.framework" custom="true"/>
+        <framework src="libs/ios/BaiduMapAPI_Location.framework" custom="true"/>
+        <framework src="libs/ios/BaiduMapAPI_Search.framework" custom="true"/>
+        <source-file src="libs/ios/thirdlibs/libcrypto.a" framework="true"/>
+        <source-file src="libs/ios/thirdlibs/libssl.a" framework="true"/>
+
+        <framework src="CoreLocation.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="libsqlite3.0.tbd"/>
+        <framework src="CoreTelephony.framework"/>
+    </platform>
+
+</plugin>

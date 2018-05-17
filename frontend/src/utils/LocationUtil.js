@@ -7,37 +7,55 @@ var locationUtil = {
     setTimeout(function () {
       console.log('get location periodically!')
       if (store.state.user._id !== '') {
-        navigator.geolocation.getCurrentPosition(locationUtil.translateLoc, locationUtil.onGetLocationError, {
-          timeout: 10000
-          // enableHighAccuracy: true
-        })
+        baidumap_location.getCurrentPosition(function (result) {
+          console.log('get location result', result)
+          if (result.latitude === NaN || result.longitude === NaN || (result.latitude < 1 && result.longitude < 1)) {
+            console.log('get location failed: ', result.locType)
+            return
+          }
+          locationUtil.commitLocInfo(result.latitude, result.longitude)}, locationUtil.onGetLocationError)
       }
       locationUtil.getLocationPeriodically(timeInterval)
     }, timeInterval)
   },
-  getLocationImmediately: function () {
+  getLocationImmediately: function (callback) {
+    var succeedCallback = callback
+    if (callback === undefined) {
+      succeedCallback = locationUtil.commitLocInfo
+    }
+
     console.log('get location immediately!')
     if (store.state.user._id !== '') {
-      navigator.geolocation.getCurrentPosition(locationUtil.translateLoc, locationUtil.onGetLocationError, {
-        timeout: 10000
-        // enableHighAccuracy: true
-      })
+      baidumap_location.getCurrentPosition(function (result) {
+        console.log('get location result', result)
+        if (result.latitude === NaN || result.longitude === NaN || (result.latitude < 1 && result.longitude < 1)) {
+          console.log('get location failed: ', result.locType)
+          return
+        }
+        succeedCallback(result.latitude, result.longitude)
+      }, locationUtil.onGetLocationError)
+      // navigator.geolocation.getCurrentPosition(locationUtil.translateLoc, locationUtil.onGetLocationError, {
+      //   timeout: 10000,
+      //   enableHighAccuracy: false
+      // })
     }
   },
-  translateLoc: function (position) {
-    var currentLat = position.coords.latitude
-    var currentLon = position.coords.longitude
-    var gpsPoint = new BMap.Point(currentLon, currentLat)
-    BMap.Convertor.translate(gpsPoint, 0, locationUtil.setBaiduPoint)
-  },
-  setBaiduPoint: function (point) {
+  // translateLoc: function (position) {
+  //   console.log('get location succeed', position)
+  //   var currentLat = position.coords.latitude
+  //   var currentLng = position.coords.longitude
+  //   var gpsPoint = new BMap.Point(currentLng, currentLat)
+  //   BMap.Convertor.translate(gpsPoint, 0, locationUtil.setBaiduPoint)
+  // },
+
+  commitLocInfo: function (lat, lng) {
     console.log('$$$$$$$$$ this is baidu point $$$$$$$$$$$$')
-    console.log(point)
+    console.log(lat, lng)
     if (store.state.user._id !== '') {
       var param = {}
       param.user_id = store.state.user._id
-      param.locationLat = point.lat
-      param.locationLng = point.lng
+      param.locationLat = lat
+      param.locationLng = lng
       store.dispatch('UPSERT_USER_LOCATION', param)
     }
   },

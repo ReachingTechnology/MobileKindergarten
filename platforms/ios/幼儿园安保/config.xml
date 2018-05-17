@@ -75,4 +75,7 @@
     <feature name="FileTransfer">
         <param name="ios-package" value="CDVFileTransfer" />
     </feature>
+    <feature name="BaiduMapLocation">
+        <param name="ios-package" value="BaiduMapLocation" />
+    </feature>
 </widget>

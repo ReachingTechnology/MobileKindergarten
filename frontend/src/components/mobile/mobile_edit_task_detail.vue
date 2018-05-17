@@ -66,11 +66,13 @@
   import {CHANGE_APP_TITLE, COMMIT_TASK_EXEC_INFO} from '../../store/mutation_types'
   import {TASK_STATUS_INPROCESS, TASK_STATUS_UNFINISHED, TASK_STATUS_FINISHED, TASK_STATUS} from '../../store/common_defs'
   import dateUtil from '../../utils/DateUtil'
+//  import locationUtil from '../../utils/LocationUtil'
   import util from '../../store/utils'
   import FileUtil from '../../utils/FileUtil'
   import Moment from 'moment'
   import ArrayUtil from '../../utils/ArrayUtil'
   import {MessageBox} from 'mint-ui'
+
   export default {
     components: {},
     name: 'duty_edit_panel',
@@ -84,7 +86,8 @@
         var hh = this
         MessageBox.confirm('确定提交?').then(function (action) {
           hh.isCommitting = true
-          hh.getLocation()
+//          hh.getLocation()
+          hh.commitInfo(0, 0)
         })
       },
       cancelEdit () {
@@ -95,8 +98,7 @@
       },
       // Baidu location functionalities
       getLocation () {
-        console.log('***************try to get location**************')
-        navigator.geolocation.getCurrentPosition(this.translateLoc, this.onGetLocationError, {timeout: 10000})
+//        locationUtil.getLocationImmediately(undefined)
       },
       commitInfo (lat, lng) {
         this.task.startofday = dateUtil.getStartOfTheday(this.selectedDay)
@@ -119,18 +121,6 @@
         this.COMMIT_TASK_EXEC_INFO(taskFinishInfo)
         this.isCommitting = false
         this.$router.go(-1)
-      },
-      translateLoc (position) {
-        console.log('***************got position**************')
-        var currentLat = position.coords.latitude
-        var currentLon = position.coords.longitude
-        var gpsPoint = new BMap.Point(currentLon, currentLat)
-        BMap.Convertor.translate(gpsPoint, 0, this.setBaiduPoint)
-      },
-      setBaiduPoint (point) {
-        console.log('***************this is baidu point**************')
-        console.log(point)
-        this.commitInfo(point.lat, point.lng)
       },
       onGetLocationError (error) {
         console.log('get location error:')

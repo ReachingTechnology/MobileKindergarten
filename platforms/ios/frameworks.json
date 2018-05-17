@@ -1,6 +1,9 @@
 {
     "libz.tbd": 1,
-    "CoreLocation.framework": 2,
+    "CoreLocation.framework": 3,
     "ImageIO.framework": 1,
-    "AVFoundation.framework": 1
+    "AVFoundation.framework": 1,
+    "SystemConfiguration.framework": 1,
+    "libsqlite3.0.tbd": 1,
+    "CoreTelephony.framework": 1
 }

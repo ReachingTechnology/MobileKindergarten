@@ -36,6 +36,12 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "kinder.reachingtech.com"
+    },
+    "cordova-plugin-baidumaplocation": {
+      "ANDROID_KEY": "Eb881VVCtnUGDGFgcaMsq9jcq6b2eY6o",
+      "IOS_KEY": "OIlX6M6Pvf7k0Z8sUHLkGf7WYaje2Yfc",
+      "IOS_LOCATION_DESC": "请点击'好'以允许访问。",
+      "PACKAGE_NAME": "kinder.reachingtech.com"
     }
   },
   "dependent_plugins": {

@@ -40,6 +40,15 @@
 		382A1BFCE00141989CAD11EA /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = F917D719C07B48938FE41FC8 /* CDVLocalFilesystem.m */; };
 		ED16E11171C84461B4B13172 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEB5A66E45D498C91B14752 /* CDVAssetLibraryFilesystem.m */; };
 		04A0D20F04D5498188CF75FF /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A5560BCFE495ABC4F97B3 /* CDVFileTransfer.m */; };
+		E3B9DCF70B7042E7A90066EC /* BaiduMapLocation.mm in Resources */ = {isa = PBXBuildFile; fileRef = 7D800F27FB8543C3BE80A903 /* BaiduMapLocation.mm */; };
+		D0A449448E084518BF86A431 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450190CA981E4C0F9C3B56B1 /* libcrypto.a */; };
+		C894A3E19D764755862B174C /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B393168CCDCB47DD9493601B /* libssl.a */; };
+		BCB0E2FEB5844FCBAE20D564 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2865F7115C704369BCE0F5B4 /* BaiduMapAPI_Base.framework */; };
+		958D05AF4399419C80B7DBF8 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5F63F92E334CDF995F9D6A /* BaiduMapAPI_Location.framework */; };
+		088FCD08C9BF4BE0B7C7DB5D /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F4A120280F4B6DB6F6F4EB /* BaiduMapAPI_Search.framework */; };
+		5137EB8037DD4DEE87BCE6A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F707F888014E5584A8EB5D /* SystemConfiguration.framework */; };
+		7E8FD880E37D47A89DF14E5B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 760E07994C954F53A160997F /* libsqlite3.0.tbd */; };
+		F277266E82E94273BA813B34 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87183FED68844FD963C783E /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +134,16 @@
 		1B6968A5E8B044D19738E60F /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		6E6A5560BCFE495ABC4F97B3 /* CDVFileTransfer.m */ = {isa = PBXFileReference; name = "CDVFileTransfer.m"; path = "cordova-plugin-file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		86AC0F07A6444366A63DD733 /* CDVFileTransfer.h */ = {isa = PBXFileReference; name = "CDVFileTransfer.h"; path = "cordova-plugin-file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		7D800F27FB8543C3BE80A903 /* BaiduMapLocation.mm */ = {isa = PBXFileReference; name = "BaiduMapLocation.mm"; path = "cordova-plugin-baidumaplocation/BaiduMapLocation.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		450190CA981E4C0F9C3B56B1 /* libcrypto.a */ = {isa = PBXFileReference; name = "libcrypto.a"; path = "幼儿园安保/Plugins/cordova-plugin-baidumaplocation/libcrypto.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B393168CCDCB47DD9493601B /* libssl.a */ = {isa = PBXFileReference; name = "libssl.a"; path = "幼儿园安保/Plugins/cordova-plugin-baidumaplocation/libssl.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		1CE9C9EA86804FA38AE21A8D /* BaiduMapLocation.h */ = {isa = PBXFileReference; name = "BaiduMapLocation.h"; path = "cordova-plugin-baidumaplocation/BaiduMapLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		2865F7115C704369BCE0F5B4 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; name = "BaiduMapAPI_Base.framework"; path = "幼儿园安保/Plugins/cordova-plugin-baidumaplocation/BaiduMapAPI_Base.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6C5F63F92E334CDF995F9D6A /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; name = "BaiduMapAPI_Location.framework"; path = "幼儿园安保/Plugins/cordova-plugin-baidumaplocation/BaiduMapAPI_Location.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		08F4A120280F4B6DB6F6F4EB /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; name = "BaiduMapAPI_Search.framework"; path = "幼儿园安保/Plugins/cordova-plugin-baidumaplocation/BaiduMapAPI_Search.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A4F707F888014E5584A8EB5D /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		760E07994C954F53A160997F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; name = "libsqlite3.0.tbd"; path = "usr/lib/libsqlite3.0.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		E87183FED68844FD963C783E /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +156,14 @@
 				C738714B7B954274B8D9DB33 /* CoreLocation.framework in Frameworks */,
 				C254A47FC133417F8E9D997D /* ImageIO.framework in Frameworks */,
 				4FA02103A60E4819BD087988 /* AVFoundation.framework in Frameworks */,
+				D0A449448E084518BF86A431 /* libcrypto.a in Frameworks */,
+				C894A3E19D764755862B174C /* libssl.a in Frameworks */,
+				BCB0E2FEB5844FCBAE20D564 /* BaiduMapAPI_Base.framework in Frameworks */,
+				958D05AF4399419C80B7DBF8 /* BaiduMapAPI_Location.framework in Frameworks */,
+				088FCD08C9BF4BE0B7C7DB5D /* BaiduMapAPI_Search.framework in Frameworks */,
+				5137EB8037DD4DEE87BCE6A6 /* SystemConfiguration.framework in Frameworks */,
+				7E8FD880E37D47A89DF14E5B /* libsqlite3.0.tbd in Frameworks */,
+				F277266E82E94273BA813B34 /* CoreTelephony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +239,14 @@
 				5581FE092D0945C28800F588 /* CoreLocation.framework */,
 				F81E3454B69C41B29A0083E7 /* ImageIO.framework */,
 				5043FE0C7FFF4362AFF0F83C /* AVFoundation.framework */,
+				450190CA981E4C0F9C3B56B1 /* libcrypto.a */,
+				B393168CCDCB47DD9493601B /* libssl.a */,
+				2865F7115C704369BCE0F5B4 /* BaiduMapAPI_Base.framework */,
+				6C5F63F92E334CDF995F9D6A /* BaiduMapAPI_Location.framework */,
+				08F4A120280F4B6DB6F6F4EB /* BaiduMapAPI_Search.framework */,
+				A4F707F888014E5584A8EB5D /* SystemConfiguration.framework */,
+				760E07994C954F53A160997F /* libsqlite3.0.tbd */,
+				E87183FED68844FD963C783E /* CoreTelephony.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +312,8 @@
 				1B6968A5E8B044D19738E60F /* CDVAssetLibraryFilesystem.h */,
 				6E6A5560BCFE495ABC4F97B3 /* CDVFileTransfer.m */,
 				86AC0F07A6444366A63DD733 /* CDVFileTransfer.h */,
+				7D800F27FB8543C3BE80A903 /* BaiduMapLocation.mm */,
+				1CE9C9EA86804FA38AE21A8D /* BaiduMapLocation.h */,
 			);
 			name = Plugins;
 			path = "幼儿园安保/Plugins";
@@ -409,6 +446,7 @@
 				382A1BFCE00141989CAD11EA /* CDVLocalFilesystem.m in Sources */,
 				ED16E11171C84461B4B13172 /* CDVAssetLibraryFilesystem.m in Sources */,
 				04A0D20F04D5498188CF75FF /* CDVFileTransfer.m in Sources */,
+				E3B9DCF70B7042E7A90066EC /* BaiduMapLocation.mm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +482,20 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				PRODUCT_NAME = "幼儿园安保";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"$(SRCROOT)/幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+				);
 			};
 			name = Debug;
 		};
@@ -466,6 +518,20 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				PRODUCT_NAME = "幼儿园安保";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"$(SRCROOT)/幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+					"\"幼儿园安保/Plugins/cordova-plugin-baidumaplocation\"",
+				);
 			};
 			name = Release;
 		};

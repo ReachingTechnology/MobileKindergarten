@@ -47,20 +47,25 @@
     </array>
     <key>UIRequiresFullScreen</key>
     <true/>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>audio</string>
+    </array>
+    <key>NSCameraUsageDescription</key>
+    <string/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string/>
     <key>NSAppTransportSecurity</key>
     <dict>
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
-    <key>UIBackgroundModes</key>
-    <array>
-      <string>audio</string>
-    </array>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string/>
-    <key>NSCameraUsageDescription</key>
-    <string></string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string></string>
+    <string>请点击'好'以允许访问。</string>
+    <key>BaiduMapLocation</key>
+    <dict>
+      <key>IOS_KEY</key>
+      <string>OIlX6M6Pvf7k0Z8sUHLkGf7WYaje2Yfc</string>
+    </dict>
   </dict>
 </plist>

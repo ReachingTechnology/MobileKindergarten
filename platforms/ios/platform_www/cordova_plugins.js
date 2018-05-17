@@ -320,6 +320,14 @@ module.exports = [
         "clobbers": [
             "window.FileTransfer"
         ]
+    },
+    {
+        "id": "cordova-plugin-baidumaplocation.baidumap_location",
+        "file": "plugins/cordova-plugin-baidumaplocation/www/baidumap_location.js",
+        "pluginId": "cordova-plugin-baidumaplocation",
+        "clobbers": [
+            "baidumap_location"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -329,7 +337,6 @@ module.exports.metadata =
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-geolocation": "2.4.3",
-    "cordova-plugin-whitelist": "1.3.2",
     "cordova-plugin-app-preferences": "0.99.3",
     "cordova-plugin-app-event": "1.2.1",
     "cordova-plugin-local-notification": "0.8.4",
@@ -337,7 +344,9 @@ module.exports.metadata =
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-file-transfer": "1.7.1"
+    "cordova-plugin-file-transfer": "1.7.1",
+    "cordova-plugin-whitelist": "1.3.3",
+    "cordova-plugin-baidumaplocation": "3.2.0"
 };
 // BOTTOM OF METADATA
 });

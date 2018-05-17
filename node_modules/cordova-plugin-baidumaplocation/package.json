@@ -1,0 +1,69 @@
+{
+  "_from": "cordova-plugin-baidumaplocation@3.2.0",
+  "_id": "cordova-plugin-baidumaplocation@3.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-kFwbS3IRncIbmJE542XS8khUtks=",
+  "_location": "/cordova-plugin-baidumaplocation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-baidumaplocation@3.2.0",
+    "name": "cordova-plugin-baidumaplocation",
+    "escapedName": "cordova-plugin-baidumaplocation",
+    "rawSpec": "3.2.0",
+    "saveSpec": null,
+    "fetchSpec": "3.2.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-baidumaplocation/-/cordova-plugin-baidumaplocation-3.2.0.tgz",
+  "_shasum": "905c1b4b72119dc21b989139e365d2f24854b64b",
+  "_spec": "cordova-plugin-baidumaplocation@3.2.0",
+  "_where": "/Users/HOZ/Projects/KinderMobile",
+  "author": {
+    "name": "aruis"
+  },
+  "bugs": {
+    "url": "https://github.com/aruis/cordova-plugin-baidumaplocation/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-baidumaplocation",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Geolocation Plugin,use Baidu Map SDK",
+  "engines": {
+    "cordovaDependencies": {
+      "2.0.0": {
+        "cordova-android": ">=5.0.0"
+      },
+      "3.0.0": {
+        "cordova-android": ">=5.0.0"
+      }
+    }
+  },
+  "homepage": "https://github.com/aruis/cordova-plugin-baidumaplocation#readme",
+  "keywords": [
+    "cordova",
+    "baidu",
+    "location",
+    "geolocation",
+    "device",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-baidumaplocation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aruis/cordova-plugin-baidumaplocation.git"
+  },
+  "version": "3.2.0"
+}

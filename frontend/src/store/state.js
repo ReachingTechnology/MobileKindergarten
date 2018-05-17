@@ -30,7 +30,6 @@ const state = {
   // 后端服务器地址
   // backend_uri: 'https://192.168.31.69:7070',
   backend_uri: 'https://47.94.192.237:7070',
-  // backend_uri: 'https://127.0.0.1:7070',
   // upload_uri: 'https://192.168.31.69:7070/util/uploadimage',
   upload_uri: 'https://47.94.192.237:7070/util/uploadimage',
   all_statistic_data: [], // 所有用户的所有任务在一个时间段内执行的情况

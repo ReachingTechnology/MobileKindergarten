@@ -74,6 +74,7 @@
   import MobileUserDayTask from './components/mobile/mobile_user_day_task.vue'
   import notificationUtil from './utils/NotificationUtil'
   import store from './store/store'
+  import locationUtil from './utils/LocationUtil'
 
   export default {
     name: 'app',
@@ -112,6 +113,7 @@
           this.GET_ALL_DUTY()
           this.GET_NEW_INFORM_COUNT()
           this.GET_NEW_DUTY_NOTIFICATION_COUNT()
+          locationUtil.getLocationImmediately(undefined)
           this.handleTabChange('today_task')
         }
       },
